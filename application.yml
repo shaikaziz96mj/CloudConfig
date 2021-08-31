@@ -1,0 +1,18 @@
+microservice:
+  order-service:
+    endpoints:
+      endpoint:
+        uri: http://ORDER-SERVICE/order/placeOrder
+  payment-service:
+    endpoints:
+      endpoint:
+        uri: http://PAYMENT-SERVICE/payment/doPayment
+eureka:
+  client:
+    enabled: true
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:9052/service-registry/eureka/
+  instance:
+    hostname: localhost
